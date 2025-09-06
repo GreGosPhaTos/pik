@@ -1,0 +1,28 @@
+@import "tailwindcss";
+body {
+    font-family: 'Inter', sans-serif;
+    min-width: 700px;
+    min-height: 1000px;
+}
+
+.card-selected {
+    border-color: #10b981; /* emerald-500 */
+    background-color: #10b981 !important; /* emerald-500 */
+    color:#E6E7EB !important;
+}
+
+.card-selected p {
+    color: #E6E7EB !important;
+}
+
+/* Styles pour le bouton d'action */
+#action-button {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+#action-button.show {
+    opacity: 1;
+    visibility: visible;
+}
