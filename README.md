@@ -1,6 +1,9 @@
-# pik
+# PIK
 
 Pik is a chrome extention which allow to extract and modify websites images.
+
+## WIP - [MVP Board](https://github.com/users/GreGosPhaTos/projects/1/views/1)
+
 
 ## To install dependencies:
 
