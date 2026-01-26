@@ -1,11 +1,11 @@
 {
   "name": "pik",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build:css": "tailwindcss -i ./src/public/styles/main.css -o ./dist/output.css",
-    "build": "rm -fr ./dist && bun build ./src/app.ts --outdir ./dist --sourcemap && bun build ./src/background.ts --outdir ./dist --sourcemap && bun build ./src/content-script.ts --outdir ./dist --sourcemap && cp -r src/public/* dist/ && rm -rf dist/styles && cp manifest.json dist/ && npm run build:css",
+    "build": "rm -fr ./dist && bun build ./src/app.ts --outdir ./dist --sourcemap && bun build ./src/service-worker.ts --outdir ./dist --sourcemap && bun build ./src/content-script.ts --outdir ./dist --sourcemap && cp -r src/public/* dist/ && rm -rf dist/styles && cp manifest.json dist/ && npm run build:css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

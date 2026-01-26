@@ -1,3 +1,4 @@
+import { useSelectedImages } from '../context/selected-images';
 import { Component } from './component';
 
 type Props = {
@@ -6,34 +7,30 @@ type Props = {
     desc?: string;
     title?: string;
   };
+  onSelect?: (card: HTMLElement) => void;
 };
 
 const render = (props: Props) => {
-  const { image } = props;
+  const { image, onSelect } = props;
 
   // state
-  const state = {
-    selectedCard: 0,
-  };
-
-  const incrementSelected = () => state.selectedCard++;
-  const decrementSelected = () =>
-    state.selectedCard > 0 && state.selectedCard--;
+  const { addCard, removeCard, getCount, getSelectedElementsSet } = useSelectedImages();
 
   function handleOnClick(card: HTMLElement) {
+    const cards = getSelectedElementsSet();
     const actionButton = document.getElementById('action-button');
-    if (card.classList.contains('card-selected')) {
+    if (cards.has(card)) {
       card.classList.remove('card-selected');
-      decrementSelected();
+      removeCard(card);
 
-      if (!state.selectedCard) {
+      if (!getCount()) {
         actionButton?.classList?.remove('show');
       }
       return;
     }
 
     card.classList.add('card-selected');
-    incrementSelected();
+    addCard(card);
     actionButton?.classList?.add('show');
   }
 
@@ -57,7 +54,10 @@ const render = (props: Props) => {
   );
 
   // Add the click handler
-  card.onclick = () => handleOnClick(card);
+  card.onclick = () => {
+    handleOnClick(card);
+    onSelect?.(card);
+  };
 
   const imageContainer = document.createElement('div');
   imageContainer.classList.add(...'flex items-center space-x-4'.split(' '));

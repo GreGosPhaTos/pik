@@ -1,7 +1,7 @@
-// background.js - Service Worker
+// service-worker.ts - Service Worker
 import { ActionNames, initListeners } from './actions';
 
-initListeners({ [ActionNames.get_images]: handleGetImages }, 'background');
+initListeners({ [ActionNames.get_images]: handleGetImages }, 'service-worker');
 
 /**
  * @param {Object} request - L'objet de requête reçu.
