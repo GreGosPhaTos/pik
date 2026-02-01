@@ -26,7 +26,7 @@ export const initListeners = (
         events[request.action](request, sender, sendResponse);
       } catch (e) {
         console.error(
-          `[${context}] Une erreur est survenue lors de l'exécution de l'action "${request.action}":`,
+          `[${context}] An error occurred while executing action "${request.action}":`,
           e
         );
         return false;

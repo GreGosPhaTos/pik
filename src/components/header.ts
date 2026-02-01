@@ -37,7 +37,7 @@ const createHeaderElement = () => {
     'text-lg',
     'shadow-lg'
   );
-  actionButton.textContent = 'Activer la sélection';
+  actionButton.textContent = 'Enable selection';
 
   header.appendChild(title);
   header.appendChild(actionButton);

@@ -4,7 +4,7 @@ import ImageContainer from './components/imageContainer';
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.body;
   if (!body) {
-    console.error("L'élément body est introuvable.");
+    console.error('Body element not found.');
     return;
   }
   body.innerHTML = '';

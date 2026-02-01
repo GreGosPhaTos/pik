@@ -1,6 +1,6 @@
 # PIK
 
-Pik is a chrome extention which allow to extract and modify websites images.
+Pik is a chrome extension which allows extracting and modifying website images.
 
 ## WIP - [MVP Board](https://github.com/users/GreGosPhaTos/projects/1/views/1)
 

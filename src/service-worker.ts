@@ -14,8 +14,6 @@ function handleGetImages(request: { tabId: number }) {
       files: ['content-script.js'],
     });
   } else {
-    console.error(
-      "Erreur: ID de l'onglet manquant dans la requête de get_images."
-    );
+    console.error('Error: Missing tab ID in get_images request.');
   }
 }

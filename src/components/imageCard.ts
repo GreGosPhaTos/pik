@@ -83,11 +83,11 @@ const render = (props: Props) => {
 
   const titleElement = document.createElement('h3');
   titleElement.classList.add('text-xl', 'font-semibold', 'text-gray-900');
-  titleElement.textContent = image.title || 'Titre de la carte';
+  titleElement.textContent = image.title || 'Card title';
 
   const descElement = document.createElement('p');
   descElement.classList.add('text-gray-500', 'mt-1');
-  descElement.textContent = image.desc || "C'est une option pour votre liste.";
+  descElement.textContent = image.desc || 'An option for your list.';
 
   contentContainer.appendChild(titleElement);
   contentContainer.appendChild(descElement);
